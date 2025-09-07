@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Catatan</title>
+    <!-- Kita pakai Tailwind CSS agar tampilannya bagus tanpa file CSS terpisah -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Sedikit style tambahan untuk menyesuaikan dengan tema Telegram */
+        body {
+            background-color: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+        }
+        .btn-primary {
+            background-color: var(--tg-theme-button-color, #3390ec);
+            color: var(--tg-theme-button-text-color, #ffffff);
+        }
+    </style>
+</head>
+<body class="p-4 font-sans">
+
+    <div class="max-w-lg mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Catatan Cepat</h1>
+        <p class="text-sm opacity-70 mb-4">
+            Tuliskan apa saja yang ingin Anda catat. Catatan ini akan disimpan sementara.
+        </p>
+
+        <!-- Area untuk mengetik catatan -->
+        <textarea 
+            id="note-input"
+            rows="10" 
+            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
+            placeholder="Ketik catatan Anda di sini..."
+            style="background-color: var(--tg-theme-secondary-bg-color, #f3f3f3); border-color: var(--tg-theme-hint-color, #e0e0e0);"
+        ></textarea>
+
+        <!-- Tombol untuk menyimpan -->
+        <button 
+            id="save-button"
+            class="w-full mt-4 btn-primary font-bold py-3 px-4 rounded-lg transition-transform transform active:scale-95"
+        >
+            Simpan Catatan
+        </button>
+    </div>
+
+    <!-- Script untuk interaksi (akan kita isi nanti) -->
+    <script>
+        // Mengambil referensi ke elemen HTML
+        const saveButton = document.getElementById('save-button');
+        const noteInput = document.getElementById('note-input');
+
+        // Saat ini, tombolnya belum melakukan apa-apa
+        saveButton.addEventListener('click', () => {
+            console.log('Tombol Simpan diklik!');
+            const noteText = noteInput.value;
+            alert('Catatan Anda: ' + noteText); // Untuk sementara kita tampilkan via alert
+        });
+    </script>
+</body>
+</html>
